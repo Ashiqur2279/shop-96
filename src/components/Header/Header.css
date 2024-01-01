@@ -1,0 +1,39 @@
+/* ------------------custom css------------------ */
+:root {
+    --first_color: #2c3e50;
+    --second_color: #e74c3c;
+    --third_color: #3498db;
+    --background_color: #ecf0f1;
+    --text_color: #ffffff;
+  }
+
+
+.header
+{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--first_color);
+
+}
+
+.header h2
+{
+
+    color:#ffffff
+}
+
+.logo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    margin-left: 50px;
+}
+.nav_container
+{
+    display: flex;
+    align-items: center;
+}
