@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import "./Header.css";
 
@@ -5,9 +6,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-      <h2>Shop 96</h2>
+        <a href="#">Shop 96</a>
       </div>
-      <nav className="nav_container"> 
+      <nav className="nav_container">
         <ul className="nav_item">
           <a href="#">Home</a>
           <a href="#">Shop</a>

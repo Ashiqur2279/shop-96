@@ -15,13 +15,7 @@
     display: flex;
     justify-content: space-between;
     background-color: var(--first_color);
-
-}
-
-.header h2
-{
-
-    color:#ffffff
+    padding: 0 5%;
 }
 
 .logo
@@ -29,11 +23,46 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff !important;
-    margin-left: 50px;
 }
+
+.logo a
+{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.logo a:hover
+{
+    color: goldenrod;
+}
+
+
+
 .nav_container
 {
     display: flex;
     align-items: center;
+    gap: 10rem;
+}
+
+.nav_item
+{
+
+}
+.nav_item a, .user a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    
+}
+
+.nav_item a:hover, .user a:hover
+{
+    
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 5px;
 }
