@@ -42,6 +42,7 @@
   /* margin: 2px; */
   border: none;
   outline: 3px double var(--second_color);
+  cursor: pointer;
 }
 
 
