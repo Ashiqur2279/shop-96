@@ -1,7 +1,7 @@
 .product
 {
     height: 500px;
-    width: 300px;
+    width: 280px;
     border: 2px solid goldenrod;
     border-radius: 5px;
     position: relative;
@@ -10,8 +10,8 @@
 
 .product_img img
 {
-    height: 295px;
-    width: 295px;
+    height: 280px;
+    width: 280px;
     padding: 5px;
     border-radius: 5px;
     /* display: block; */
@@ -29,4 +29,5 @@
     width: 100%;
     outline: none;
     border-radius: 0px 0px 5px 5px;
+    border: 2px solid goldenrod;
 }

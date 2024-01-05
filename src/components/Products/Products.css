@@ -6,6 +6,13 @@
   --background_color: #ecf0f1;
   --text_color: #ffffff;
 }
+
+.loader
+{
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 50px;
+}
 .products_container {
   margin-top: 20px;
   display: flex;
@@ -35,13 +42,35 @@
 }
 .load_products {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
   /* margin: 0 auto; */
   justify-content: center;
   align-items: center;
 }
 
+/* responsive load product start */
+
+/* 1201px and more - Extra large screen */
+@media (min-width: 1200px) {
+  .load_products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 769px - 1199px - Medium screen */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .load_products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* responsive load product end */
+
+
+
+/* cart summery style */
 .cart_summery {
   width: 20%;
   height: 75vh;
@@ -50,4 +79,11 @@
   background-color: lightsalmon;
   border-radius: 5px;
   text-align: center;
+}
+
+.cart_summery h2
+{
+  border-bottom: 2px solid black;
+  padding: 5px;
+  margin: 0 5%;
 }
