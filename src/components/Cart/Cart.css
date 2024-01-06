@@ -1,0 +1,18 @@
+.cart_title {
+  border-bottom: 2px solid black;
+  padding: 5px;
+  margin: 0 5%;
+}
+
+.cart_items
+{
+ text-align: left;
+ margin-left: 1rem;
+ margin-top: 1rem;
+}
+
+.cart_items p
+{
+  margin: 10px 0;
+  font-size: 18px;
+}

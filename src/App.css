@@ -1,7 +1,5 @@
-.container 
-{
-    max-width: 1440px; /* Adjust according to your design */
-    margin: 0 auto;   /* Center the container */
-    height: 100%;
-  }
-  
+.container {
+  max-width: 1440px; /* Adjust according to your design */
+  margin: 0 auto; /* Center the container */
+  height: 100%;
+}

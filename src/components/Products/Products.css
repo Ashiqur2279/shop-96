@@ -7,8 +7,7 @@
   --text_color: #ffffff;
 }
 
-.loader
-{
+.loader {
   text-align: center;
   margin-top: 2rem;
   font-size: 50px;
@@ -16,10 +15,8 @@
 .products_container {
   margin-top: 20px;
   display: flex;
-  gap: 5%;
-  position: relative;
+  gap: 2%;
   justify-content: center;
-  /* align-items: center; */
 }
 .title {
   text-align: center;
@@ -68,22 +65,13 @@
 }
 /* responsive load product end */
 
-
-
 /* cart summery style */
 .cart_summery {
-  width: 20%;
+  width: 25%;
   height: 75vh;
   position: sticky;
-  top: 5px;
+  top: 0;
   background-color: lightsalmon;
   border-radius: 5px;
   text-align: center;
-}
-
-.cart_summery h2
-{
-  border-bottom: 2px solid black;
-  padding: 5px;
-  margin: 0 5%;
 }
