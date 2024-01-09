@@ -4,11 +4,13 @@ import "./Product.css";
 
 const Product = (props) => {
   //destruct the product prop
-  const { title, rating, price, thumbnail, brand, description, category, id } =
-    props.product;
+  const { title, rating, price, thumbnail, brand } = props.product;
 
   //destruct addToCart
   const addToCart = props.addToCart;
+
+  //destruct delete to cart
+  const reduceToCart = props.reduceToCart;
 
   //return is here----------------
   return (
@@ -22,9 +24,20 @@ const Product = (props) => {
         <p>Brand: {brand}</p>
         <p>Rating: {rating} out of 5</p>
       </div>
-      <button className="btn" onClick={() => addToCart(props.product)}>
-        Add to Cart
-      </button>
+      <div className="add_delete_btn">
+        <button
+          className="btn btn_add"
+          onClick={() => addToCart(props.product)}
+        >
+          Add to Cart
+        </button>
+        <button
+          className="btn btn_delete"
+          onClick={() => reduceToCart(props.product)}
+        >
+          Delete to Cart
+        </button>
+      </div>
     </div>
   );
 };
