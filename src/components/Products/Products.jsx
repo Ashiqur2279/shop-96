@@ -3,11 +3,18 @@ import React, { useEffect, useState } from "react";
 import "./Products.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import { addToDB, reduceToDB, updateShoppingCart } from "../Utilities/LocalStorage";
+import {
+  addToLocalStorage,
+  deleteFromLocalStorage,
+  getDataFromLocalStorage,
+} from "../Utilities/LocalDatabase";
 
 const Products = () => {
+
   //product loading is start here------------------
   const [products, setProducts] = useState(null);
+  const [storedProduct, setStoredProduct] = useState([]);
+  // const [storedProductQuantity, setStoredProductQuantity] = useState(null);
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -15,27 +22,50 @@ const Products = () => {
       .then((data) => setProducts(data.products))
       .catch((error) => console.log("Error fetching data: ", error));
   }, []);
-  //product loading is end here------------------
 
-  //addToCart is start here ------------------------
-  const [cart, setCart] = useState([]);
-
-  // function for addToCart-----------------
-  function addToCart(product) {
-    // console.log(product.id);
-    const newCart = [...cart, product];
-    setCart(newCart);
-
-    //add to DB function is write here
-    // addToDB(product.id);
-    updateShoppingCart(product.id);
-  }
-  //addToCart is end here ------------------------
-  // delete from cart is start here-----------------
-  const reduceToCart = (product) => {
-    reduceToDB(product.id)
+  // handle addToCart to local storage start
+  const handleAddToCart = (item) => {
+    addToLocalStorage(item.id);
+    getDataFromLocalStorage(item.id);
   };
-  // delete from cart is end here-----------------
+
+  const handleDeleteToCart = (item) => {
+    deleteFromLocalStorage(item.id);
+  };
+
+  // get data from local storage to set the cart component
+  useEffect(() => {
+    const storedCart = getDataFromLocalStorage();
+
+    const updateStoredProducts = [];
+
+    //check the stored cart and products is available
+
+    if (storedCart && products) {
+      // get the product
+      for (const itemId in storedCart) {
+        const itemIdNumber = parseInt(itemId);
+
+        const storedProduct = products.find(
+          (product) => product.id === itemIdNumber
+        );
+
+        // get the product quantity
+        const storedProductQuantity = storedCart[itemId];
+
+        //push the product and quantity to the array
+        updateStoredProducts.push({
+          product: storedProduct,
+          quantity: storedProductQuantity,
+        });
+
+        //set product to the state
+        setStoredProduct(updateStoredProducts);
+      }
+    }
+  }, [products]);
+  console.log(storedProduct);
+
   //---------------return start here-----------------
   return (
     <div>
@@ -56,15 +86,15 @@ const Products = () => {
                   <Product
                     product={product}
                     key={product.id}
-                    addToCart={addToCart}
-                    reduceToCart={reduceToCart}
+                    addToCart={handleAddToCart}
+                    deleteToCart={handleDeleteToCart}
                   ></Product>
                 ))}
               </div>
             </div>
             {/* -----------cart summery----------- */}
             <div className="cart_summery">
-              <Cart cart={cart}></Cart>
+              <Cart></Cart>
             </div>
           </div>
         </>

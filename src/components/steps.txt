@@ -1,0 +1,4 @@
+1. add to cart handler set kra
+2. pass the product data to the local storage
+  2.1: local storage e product id and quantity add korte hbe
+  2.2: check the existing value. if exist update the value. but if not initial the value and set it.

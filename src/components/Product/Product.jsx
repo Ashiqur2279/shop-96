@@ -2,15 +2,17 @@
 import React from "react";
 import "./Product.css";
 
-const Product = (props) => {
+// eslint-disable-next-line react/prop-types
+const Product = ({ product, addToCart, deleteToCart }) => {
   //destruct the product prop
-  const { title, rating, price, thumbnail, brand } = props.product;
+  // eslint-disable-next-line react/prop-types
+  const { title, rating, price, thumbnail, brand } = product;
 
   //destruct addToCart
-  const addToCart = props.addToCart;
+  // const addToCart = props.addToCart;
 
   //destruct delete to cart
-  const reduceToCart = props.reduceToCart;
+  // const reduceToCart = props.reduceToCart;
 
   //return is here----------------
   return (
@@ -25,15 +27,12 @@ const Product = (props) => {
         <p>Rating: {rating} out of 5</p>
       </div>
       <div className="add_delete_btn">
-        <button
-          className="btn btn_add"
-          onClick={() => addToCart(props.product)}
-        >
+        <button onClick={() => addToCart(product)} className="btn btn_add">
           Add to Cart
         </button>
         <button
+          onClick={() => deleteToCart(product)}
           className="btn btn_delete"
-          onClick={() => reduceToCart(props.product)}
         >
           Delete to Cart
         </button>

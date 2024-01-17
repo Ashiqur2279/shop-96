@@ -39,6 +39,7 @@ const updateShoppingCart = (itemId) => {
   } else {
     shoppingCart[itemId] = 1;
   }
+  
   //update the shopping cart in the local storage
   localStorage.setItem("shopping_cart", JSON.stringify(shoppingCart));
 };
