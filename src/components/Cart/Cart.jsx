@@ -1,17 +1,16 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.css";
 
 // eslint-disable-next-line react/prop-types
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   //-------------cart calculation start here-------------
 
   // total price calculation-------
-  let totalCartPrice = 0;
-
-  // for (const cartProduct of cart) {
-  //   totalCartPrice = totalCartPrice + cartProduct.price;
-  // }
+  const totalCartPrice = cartItems.reduce(
+    (acc, curr) => acc + curr.price * curr.quantity,
+    0
+  );
 
   // 5% shipping charge calculation--------
   let shippingCharge = (totalCartPrice / 100) * 5;
